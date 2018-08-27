@@ -2,8 +2,6 @@ package test1;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.uestc.yihau.chat.module.chat.ChatModule;
-import com.uestc.yihau.chat.module.player.PlayerModule;
-import com.uestc.yihau.chat.module.player.request.LoginRequestProto;
 import com.uestc.yihau.chat.server.module.player.dao.PlayerDao;
 import com.uestc.yihau.chat.server.module.player.dao.entity.Player;
 import com.uestc.yihau.chat.server.module.player.handler.PlayerHandler;

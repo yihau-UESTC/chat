@@ -39,10 +39,11 @@ public class Server {
                             ch.pipeline().addLast(new AcceptorIdleStateTrigger());
                             ch.pipeline().addLast(new RequestDecoder());
                             ch.pipeline().addLast(new ResponseEncoder());
+                            ch.pipeline().addLast(new HeatBeatServerHandler());
                             ch.pipeline().addLast(busyGroup, new ServerHandler());
                     }
                 });
-           ChannelFuture future = bootstrap.bind(new InetSocketAddress("192.168.0.109",8888)).sync();
+           ChannelFuture future = bootstrap.bind(new InetSocketAddress("127.0.0.1",8888)).sync();
            future.addListener(new ChannelFutureListener() {
                @Override
                public void operationComplete(ChannelFuture future) throws Exception {
