@@ -15,8 +15,9 @@ public class HeatBeatServerHandler extends SimpleChannelInboundHandler<Request> 
     protected void channelRead0(ChannelHandlerContext ctx, Request msg) throws Exception {
         if (msg.getModule() == ModuleId.HEATBEAT){
             System.out.println("server receive heatbeat --->" + ctx.channel().remoteAddress());
-        }else
+        }else {
             ctx.fireChannelRead(msg);
+        }
     }
 
     @Override
